@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+@font-face {
+    font-family: MacondoSwashCaps;
+    src: url(../assets/fonts/MacondoSwashCaps-Regular.woff) format('woff'),
+        url(../assets/fonts/MacondoSwashCaps-Regular.ttf) format('truetype');
+}
+
+header {
+    height: 90vh;
+    background-image: url("../assets/img/rainforest-river.jpg");
+    background-size: cover;
+    /*Resize the background image to cover the entire container */
+    background-position: center;
+    /*Center the image */
+    background-attachment: fixed;
+    /*The image does not scroll with the page*/
+    display: flex;
+    align-items: center;
+    justify-content: center; /*To center the tittle in the center of the image */
+}
+
+/* ↓ The Amazon Rainforest box ↓ */
+header>div {
+    background-color: white;
+    min-height: 3em;
+    opacity: 0.7;
+}
+
+/* ↓ The Amazon Rainforest text ↓ */
+header h1 {
+    font-family: MacondoSwashCaps, Sans-Serif;
+    margin: 0.5em; /*Makes sure that the text stays inside of the white div*/
+    text-align: center;
+}
+
+.main-box {
+    background-image: linear-gradient(#eff5ef, #bfd9bf);
+    border-radius: 1em;
+    bottom: 15vh;
+    /* Pushes page further up */
+    box-shadow: 3px 3px 10px 10px #1d1d1d;
+    margin: 0 15%;
+    padding: 5%;
+    position: relative;
+}
+
+#newsletter-introduction {
+    text-align: center;
+}
+
+/* ↓ "The Amazonia Needs You (2nd Newsletter)" ↓ */
+#newsletter-introduction>h2 {
+    font-family: MacondoSwashCaps; /*from @fontface*/
+    text-decoration: underline;
+    text-transform: capitalize; /*capitalizes the first letter of each word in the selected text*/
+    word-spacing: 0.1em;
+}
+
+/* ↓ List in the introduction ↓ */
+#newsletter-introduction>ul {
+    font: 0.9em "Courier New";
+    list-style-type: none;
+    /*Removes the default decoration from ul*/
+}
+
+#newsletter-introduction li::after,
+#newsletter-introduction li::before {
+    color: darkgray;
+    content: " * * *";
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
+.text-article p::first-letter {
+    font-size: 2em;
+}
+
+.text-article p::first-line {
+    color: #215502;
+    font-weight: bold;
+}
+
+article>div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+figure {
+    flex: 0 45%;
+    margin: 0;
+}
+
+.text-article {
+    flex: 0 45%;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+.main-box img {
+    max-width: 100%;
+    /* takes 100% of the figure */
+}
+
+footer {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ↓ Screen size is less than 960px wide ↓ */
+@media only screen and (max-width: 960px) {
+
+    header {
+        height: 40vh;
+    }
+
+    /* ↓ The “Amazon Rainforest” box ↓ */
+    header>div {
+        width: 70vw;
+    }
+
+    .main-box {
+        bottom: 10vh;
+        /* Pushes page further up */
+        margin: 0 5%;
+
+    }
+}
+
+/* ↓ Screen size is less than 600px wide ↓ */
+@media only screen and (max-width: 600px) {
+
+    body {
+        font-size: 1.2rem;
+    }
+
+    header {
+        height: 30vh;
+    }
+
+    /* ↓ The “Amazon Rainforest” box ↓ */
+    header>div {
+        min-height: 1.5em;
+        width: 90vw;
+    }
+
+    .main-box {
+        bottom: 1vh;
+        /* Pushes page further up */
+        box-shadow: none;
+        margin: 0 1%;
+    }
+
+    /* ↓ Main content. text and pictures ↓ */
+    article>div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .text-article {
+        text-align: justify;
+        text-indent: 1.5em;
+    }
+
+    figure {
+        order: 1;
+        /* will show first the text and after that the figures */
+    }
+}
